@@ -41,13 +41,13 @@ function Weather() {
                 }
             
 
-                const dayForecast = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`);
+                const dayForecast = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`);
                 const flist = dayForecast.data.list;
                 const filtered = filterForecast(flist);
                 setDayForcast(filtered);
 
                 // Fetch weather icon
-                setWeatherIcon(`http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`);
+                setWeatherIcon(`https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`);
             } catch (error) {
                 console.log(error)
             }
@@ -95,14 +95,14 @@ function Weather() {
               }
          
 
-            const dayForecast = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`);
+            const dayForecast = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`);
             const flist = dayForecast.data.list;
            
             const filtered = filterForecast(flist);
             setDayForcast(filtered);
 
             // Fetch weather icon
-            setWeatherIcon(`http://openweathermap.org/img/wn/${weatherResponse.data.weather[0].icon}.png`);
+            setWeatherIcon(`https://openweathermap.org/img/wn/${weatherResponse.data.weather[0].icon}.png`);
 
            
         } catch (error) {
