@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.scss";
 import { IoSearch } from "react-icons/io5";
@@ -29,7 +29,7 @@ function Weather() {
     const API_KEY = "c482559d3dd586b617bd8546c3ea1ddc";
 
 
-    useEffect(() => {
+   
         const fetchdata = async () => {
             try {
                 const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
@@ -52,8 +52,12 @@ function Weather() {
                 console.log(error)
             }
         }
-        fetchdata();
-    }, [])
+
+        if(!weatherData){
+            fetchdata();
+        }
+       
+    
 
     const unixTimestamp = weatherData?.sys?.sunrise;
 
