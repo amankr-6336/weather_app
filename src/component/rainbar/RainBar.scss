@@ -1,0 +1,58 @@
+.rainbar{
+    width: 100%;
+    height: 30px;
+    // border: 2px solid red;
+    padding: 10px;
+    .innerrainbar{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .bar_time{
+            width: 20%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p{
+                font-size: 0.8rem;
+                font-weight: 500;
+            }
+
+        }
+
+        .barlength{
+            width: 80%;
+            height: 7px;
+         
+            border-radius: 10px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .bar_value{
+                
+                height: 100%;
+             
+               transition: ease-in-out;
+               transition-duration: 1s;
+               border-radius: 10px;
+            }
+
+            .dark{
+                background-color: #211c6a;
+            }
+            .light{
+                background-color: #9181ec;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    .rainbar{
+       height: 30px;
+       padding: 10px 10px; 
+    }
+}
